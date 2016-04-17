@@ -123,6 +123,18 @@ jQuery(document).ready(function($) {
 	        jQuery(this).attr('id', 'tweets-' + index);
 	    }).each(function(index) {
 			
+			var TweetConfig = {
+				"id": jQuery('#tweets-' + index).attr('data-widget-id'),
+				"domId": '',
+				"maxTweets": 5,
+				"enableLinks": true,
+				"showUser": true,
+				"showTime": true,
+				"dateFunction": '',
+				"showRetweet": false,
+				"customCallback": handleTweets
+			};
+			
 			function handleTweets(tweets) {
 			    var x = tweets.length;
 			    var n = 0;
@@ -136,7 +148,8 @@ jQuery(document).ready(function($) {
 			    element.innerHTML = html;
 			    return html;
 			}
-	        twitterFetcher.fetch(jQuery('#tweets-' + index).attr('data-widget-id'), '', 5, true, true, true, '', false, handleTweets);
+			
+			twitterFetcher.fetch(TweetConfig);
 	
 	    });
 	}
@@ -156,7 +169,7 @@ jQuery(window).load(function() {
 	"use strict";
 
     var navHeight = jQuery('nav').outerHeight();
-    jQuery('a[href^="#"]').not('a[href="#"], .wpb_accordion a, .wpb_tabs a, .wpb_tour a').smoothScroll({
+    jQuery('.nav-container a[href^="#"], a[href^="#"].btn').not('a[href="#"], .wpb_accordion a, .wpb_tabs a, .wpb_tour a').smoothScroll({
         offset: -navHeight,
         speed: 800
     });

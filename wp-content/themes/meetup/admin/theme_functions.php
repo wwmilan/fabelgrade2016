@@ -116,7 +116,7 @@ if(!( function_exists('ebor_init_theme_options') )){
 		//Ebor Framework
 		$framework_args = array(
 			'pivot_shortcodes'      => '1',
-			'meetup_widgets'         => '1',
+			'meetup_widgets'        => '1',
 			'portfolio_post_type'   => '0',
 			'team_post_type'        => '1',
 			'client_post_type'      => '1',
@@ -135,7 +135,10 @@ if(!( function_exists('ebor_init_theme_options') )){
 	/**
 	 * Only call this action when we first activate the theme.
 	 */
-	if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == 'themes.php' ){
+	if ( 
+		is_admin() && isset( $_GET['activated'] ) && $pagenow == 'themes.php' ||
+		is_admin() && isset( $_GET['theme'] ) && $pagenow == 'customize.php'
+	){
 		add_action( 'init', 'ebor_init_theme_options', 1 );
 	}
 }
@@ -351,10 +354,10 @@ if(!( function_exists('ebor_register_required_plugins') )){
 			array(
 				'name'     				=> 'Visual Composer',
 				'slug'     				=> 'js_composer',
-				'source'   				=> 'http://www.madeinebor.com/plugin-downloads/js_composer.zip',
+				'source'   				=> 'http://www.madeinebor.com/plugin-downloads/js_composer-latest.zip',
 				'required' 				=> false,
-				'external_url' 			=> 'http://www.madeinebor.com/plugin-downloads/js_composer.zip',
-				'version'               => '4.7.4'
+				'external_url' 			=> 'http://www.madeinebor.com/plugin-downloads/js_composer-latest.zip',
+				'version'               => '4.11.2'
 			)
 		);
 		$config = array(

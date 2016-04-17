@@ -18,8 +18,7 @@
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
 
 Development by TommusRhodus.
-www.madeinebor.com
-www.eborthemes.com
+www.tommusrhodus.com
 www.themeforest.net/user/tommusrhodus
 
-2015 Tom Rhodes.
+2016 Tom Rhodes.

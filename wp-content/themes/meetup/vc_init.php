@@ -29,6 +29,16 @@ if(!( function_exists('ebor_icons_settings_field') )){
 	add_shortcode_param( 'ebor_icons', 'ebor_icons_settings_field' );
 }
 
+if(!( function_exists('ebor_custom_css_classes_for_vc_row_and_vc_column') )){
+	function ebor_custom_css_classes_for_vc_row_and_vc_column( $class_string, $tag ) {
+		if ( $tag == 'vc_column' || $tag == 'vc_column_inner' ) {
+			$class_string = preg_replace( '/vc_col-sm-(\d{1,2})/', 'col-sm-$1', $class_string );
+		}
+		return $class_string; // Important: you should always return modified or original $class_string
+	}
+	add_filter( 'vc_shortcodes_css_class', 'ebor_custom_css_classes_for_vc_row_and_vc_column', 10, 2 );
+}
+
 /**
  * Add additional functions to certain blocks.
  * vc_map runs before custom post types and taxonomies are created, so this function is used
@@ -123,8 +133,12 @@ if(!( function_exists('ebor_vc_add_att') )){
 		$team_cats = get_categories( $team_args );
 		$final_team_cats = array( 'Show all categories' => 'all' );
 		
-		foreach( $team_cats as $cat ){
-			$final_team_cats[$cat->name] = $cat->term_id;
+		if( taxonomy_exists('team_category') ){
+			if( is_array($team_cats) ){
+				foreach( $team_cats as $cat ){
+					$final_team_cats[$cat->name] = $cat->term_id;
+				}
+			}
 		}
 		
 		$attributes = array(
@@ -148,9 +162,13 @@ if(!( function_exists('ebor_vc_add_att') )){
 		$organizers_cats = get_categories( $organizers_args );
 		$final_organizers_cats = array( 'Show all categories' => 'all' );
 		
-		foreach( $organizers_cats as $cat ){
-			$final_organizers_cats[$cat->name] = $cat->term_id;
-		}
+        if( taxonomy_exists('organizers_category') ){
+            if( is_array($organizers_cats) ){
+                foreach( $organizers_cats as $cat ){
+                    $final_organizers_cats[$cat->name] = $cat->term_id;
+                }
+            }
+        }
 		
 		$attributes = array(
 			'type' => 'dropdown',
@@ -172,8 +190,12 @@ if(!( function_exists('ebor_vc_add_att') )){
 		$client_cats = get_categories( $client_args );
 		$final_client_cats = array( 'Show all categories' => 'all' );
 		
-		foreach( $client_cats as $cat ){
-			$final_client_cats[$cat->name] = $cat->term_id;
+		if( taxonomy_exists('client_category') ){
+			if( is_array($client_cats) ){
+				foreach( $client_cats as $cat ){
+					$final_client_cats[$cat->name] = $cat->term_id;
+				}
+			}
 		}
 		
 		$attributes = array(
@@ -196,8 +218,12 @@ if(!( function_exists('ebor_vc_add_att') )){
 		$testimonial_cats = get_categories( $testimonial_args );
 		$final_testimonial_cats = array( 'Show all categories' => 'all' );
 		
-		foreach( $testimonial_cats as $cat ){
-			$final_testimonial_cats[$cat->name] = $cat->term_id;
+		if( taxonomy_exists('testimonial_category') ){
+			if( is_array($testimonial_cats) ){
+				foreach( $testimonial_cats as $cat ){
+					$final_testimonial_cats[$cat->name] = $cat->term_id;
+				}
+			}
 		}
 		
 		$attributes = array(
@@ -220,8 +246,12 @@ if(!( function_exists('ebor_vc_add_att') )){
 		$faq_cats = get_categories( $faq_args );
 		$final_faq_cats = array( 'Show all categories' => 'all' );
 		
-		foreach( $faq_cats as $cat ){
-			$final_faq_cats[$cat->name] = $cat->term_id;
+		if( taxonomy_exists('faq_category') ){
+			if( is_array($faq_cats) ){
+				foreach( $faq_cats as $cat ){
+					$final_faq_cats[$cat->name] = $cat->term_id;
+				}
+			}
 		}
 		
 		$attributes = array(

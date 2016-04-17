@@ -1,3 +1,14 @@
+.update-nag a[href="http://www.madeinebor.com/plugin-downloads/js_composer-latest.zip"]:after {
+	content: 'Please note, you should delete the plugin first, and then allow this message to re-install Visual Composer for you, to avoid issues.';
+	color: #dc3232;
+	font-weight: bold;
+	font-style: normal;
+	display: block;
+	margin-bottom: -19px;
+	position: relative;
+	z-index: 3;
+}
+
 select option, select {
 	font-family: sans-serif !important;	
 }
