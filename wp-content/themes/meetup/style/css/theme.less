@@ -345,7 +345,7 @@ span a:hover {
 }
 p a, .text-link a, .text-link, .comment-reply-link, .tc_in_cart a {
     border-color: @color-primary;
-    color: @color-primary !important;
+    color: @color-primary;
     padding-bottom: 2px;
 }
 p a, .text-link a:hover, .text-link:hover, .comment-reply-link:hover {
@@ -1168,9 +1168,9 @@ nav .container {
     width: 100%;
     z-index: 2;
 }
-.speaker .image-holder {
-    margin-bottom: 12px;
-}
+/* .speaker .image-holder { */
+/*     margin-bottom: 12px; */
+/* } */
 .speaker span {
     display: block;
     font-size: 16px;
@@ -1197,10 +1197,13 @@ nav .container {
 }
 .speaker .image-holder:hover .hover-state .social-links {
     .translate3d(@x: 0px,@y:0px,@z:0px);
+    height: 100%;
+    top: 0;
 }
 .speaker-with-bio {
     margin-bottom: @standard-space/2;
     overflow: hidden;
+    background: #000;
 }
 .speaker-with-bio .speaker {
     float: left;
@@ -1209,13 +1212,33 @@ nav .container {
 }
 .speaker-with-bio .speaker-description {
     float: left;
-    padding-left: 30px;
+    padding: 20px;
     width: 50%;
+}
+.speaker-with-bio .speaker-description h2 {
+  color: #fff;
+}
+.speaker-with-bio:hover {
+  background: #2896fa;
+}
+.speaker-with-bio:hover .speaker-description a.text-link {
+  color: #fff;
+}
+.speaker .image-holder:hover .social-links a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+  line-height: 300px;
 }
 .speaker-description span {
     display: inline-block;
     font-weight: 600;
     margin-bottom: 18px;
+    color: #808080;
+}
+.speaker-description a.text-link {
+  color: #2896fa;
 }
 @media all and(max-width:767px) {
     .speaker-with-bio .speaker {
@@ -2404,4 +2427,19 @@ section.speakers-category:nth-child(2) {
 }
 .individual-contact .email {
     color: #999;
+}
+.register img.ajax-loader {
+    position: absolute;
+    top: 33%;
+}
+.register.email-form {
+    padding: 30px;
+}
+.register input[type="submit"] {
+    margin-bottom: 0;
+    background: #fff;
+    color: #000 !important;
+}
+.register-header .container .row p {
+    line-height: 1.2;
 }
