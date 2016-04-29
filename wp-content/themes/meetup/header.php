@@ -6,6 +6,10 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<title><?php wp_title('| ', true, 'right'); ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="http://fabelgrade.io/wp-content/uploads/2016/04/fabelgrade_black.png" />
+    <meta property="og:title" content="FABelgrade 2016" />
+    <meta property="og:description" content="FABelgrade - the 1st conference in Serbia and the region dedicated to promotion of digital fabrication and fab lab concept and their application in various fields" />
+    <meta property="og:url" content="http://fabelgrade.io" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php wp_head(); ?>
 </head>

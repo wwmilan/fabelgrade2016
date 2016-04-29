@@ -524,7 +524,7 @@ nav .container {
 }
 .has-dropdown:hover > .nav-dropdown {
     display: block;
-    max-height: 300px;
+    max-height: 400px;
     z-index: 10;
 }
 .has-dropdown:hover .nav-dropdown li {
@@ -1281,6 +1281,14 @@ nav .container {
 .topic p.lead {
     margin-bottom: 32px;
 }
+@media only screen and (min-width: 768px) {
+  .topic p {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+    line-height: 1.3;
+  }
+}
 .topic i {
     color: @color-primary;
     display: inline-block;
@@ -1374,7 +1382,7 @@ nav .container {
     opacity: 0;
 }
 .schedule-overview li:hover {
-    background-color: @color-muted;
+    background-color: #2896fa;
 }
 .schedule-overview li:hover .schedule-text {
     max-height: 300px;
@@ -1382,10 +1390,14 @@ nav .container {
     padding-top: 18px;
 }
 .schedule-overview li:hover .top, .schedule-overview li:hover .bottom, .schedule-overview li:hover .middle {
-    border-color: rgba(0,0,0,0.4);
+    border-color: #fff;
 }
 .schedule-overview li:hover .middle {
-    background: @color-heading;
+    background: #2896fa;
+}
+.schedule-overview li:hover .schedule-title .time,
+.schedule-overview li:hover .schedule-title .title {
+    color: #fff;
 }
 .schedule-with-text .btn, .contained-gallery .btn {
     margin-right: 12px;
@@ -2402,8 +2414,12 @@ section .financial-support .wpb_text_column h1 {
 section.speakers-category {
     padding: 0;
 }
-section.speakers-category:nth-child(2) {
+section.speakers-category.first {
     padding-top: 50px;
+}
+section.topics,
+section.time-table {
+  padding-top: 0;
 }
 @media all and (min-width: 960px) {
     .sidebar-menu-toggle {
@@ -2449,6 +2465,25 @@ section.speakers-category:nth-child(2) {
     background: #fff;
     color: #000 !important;
 }
+.register.conference input, .register.conference select, .register.conference .select-holder {
+    background: #000;
+}
+.register.conference input[type="submit"] {
+    background: #fff;
+}
+.register.conference select:hover, .register.conference input[type="text"]:hover, .register.conference input[type="email"]:hover, .register.conference .select-holder:hover {
+    background: rgba(0,0,0,1);
+}
 .register-header .container .row p {
     line-height: 1.2;
+}
+.workshop-header {
+    position: relative;
+}
+.workshop-header .down-arrow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
 }

@@ -34,7 +34,7 @@ if(!( function_exists('ebor_excerpt_more') )){
 
 if(!( function_exists('ebor_excerpt_length') )){
 	function ebor_excerpt_length( $length ) {
-		return 20;
+		return 18;
 	}
 	add_filter( 'excerpt_length', 'ebor_excerpt_length', 999 );
 }
