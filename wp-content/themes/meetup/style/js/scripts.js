@@ -234,7 +234,7 @@ jQuery(window).load(function() {
     }, 10);
     
     var sponsors = jQuery('.home .financial-support .row .sponsor-column');
-    jQuery(sponsors[0]).removeClass('col-md-3 col-sm-6').addClass('col-md-12 col-sm-12');
+    jQuery(sponsors[0]).removeClass('col-md-2 col-sm-6').addClass('col-md-12 col-sm-12');
     // jQuery(jQuery('.home .financial-support .row')[2]).find('.sponsor-column').removeClass('col-md-3 col-sm-6').addClass('col-md-12 col-sm-12')
     
     var organizationEl = jQuery('.email-form .organization');

@@ -48,11 +48,11 @@ function ebor_clients_shortcode( $atts ) {
 	// } elseif( $pppage == 1 ){
 	// 	$ebor_css_class = 'col-md-12 col-sm-12';
     // }
-    $ebor_css_class = 'col-md-3 col-sm-6';
+    $ebor_css_class = 'col-md-2 col-sm-6';
 ?>
 	
 	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1">
+		<div class="col-sm-12">
 			
 			<?php
 				if ( $block_query->have_posts() ) : while ( $block_query->have_posts() ) : $block_query->the_post();
